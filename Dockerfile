@@ -15,7 +15,7 @@ COPY package.json package-lock.json ./
 RUN npm install --registry=https://registry.npmmirror.com
 
 COPY . .
-RUN npm run build
+RUN npm run build:h5
 
 # Stage 2: 运行
 FROM nginx:1.22
