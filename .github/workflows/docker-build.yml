@@ -14,7 +14,7 @@ env:
   IMAGE_TAG: ${{ github.sha }}
   REGISTRY: ${{ secrets.ACR_REGISTRY }}
   NAMESPACE: ${{ secrets.ACR_NAMESPACE }}
-  REPO: mall-app-web
+  REPO: mall-swarm-202606
 
 jobs:
   build-and-push:
@@ -43,5 +43,5 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: |
-            ${{ env.REGISTRY }}/${{ env.NAMESPACE }}/${{ env.REPO }}:${{ env.IMAGE_TAG }}
-            ${{ env.REGISTRY }}/${{ env.NAMESPACE }}/${{ env.REPO }}:latest
+            ${{ env.REGISTRY }}/${{ env.NAMESPACE }}/${{ env.REPO }}:mall-app-web-${{ env.IMAGE_TAG }}
+            ${{ env.REGISTRY }}/${{ env.NAMESPACE }}/${{ env.REPO }}:mall-app-web-latest
