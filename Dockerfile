@@ -21,7 +21,7 @@ RUN npm run build:h5
 FROM nginx:1.22
 
 # 复制构建产物到 Nginx 静态目录
-COPY --from=builder /app/build/h5 /usr/share/nginx/html
+COPY --from=builder /app/dist/build/h5 /usr/share/nginx/html
 
 # 复制 Nginx 配置
 COPY nginx.conf /etc/nginx/nginx.conf
